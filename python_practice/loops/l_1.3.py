@@ -1,8 +1,21 @@
 #!/usr/bin/env python
 #coding: utf-8
 
+def create_dict(names, values):
+    """
+    функция принимает на вход список названий единиц измерения
+    и список значений и возвращает дикт
+    """
+    return dict(zip(names, values))
+NAMES = ['INCH', 'SPAN', 'PALLIST']
+VALUES = [2.540038, 17.78, 7]
 
-CONV = {'INCH': 2.5400438, 'SPAN': 17.78, 'PALLIST': 7}
+
+CONV = create_dict(NAMES, VALUES)
+
+CONST = 7
+
+#CONV = {'INCH': 2.5400438, 'SPAN': 17.78, 'PALLIST': 7}
 
 INCH = 2.5400438
 SPAN = 17.78
@@ -20,11 +33,11 @@ def converter(src):
 
 def converter2(src):
     for i in range(1, src + 1):
-        yield i, i*CONV['INCH'], i*CONV['SPAN'], i*CONV['PALLIST']
-
+        for key in CONV:
+            print i, key, i*CONV[key], 
+        print '\n'
 
 
 
 if __name__ == '__main__':
-    for i in range(1, 10):
-        print list(converter2(i))
+    print converter2(CONST)

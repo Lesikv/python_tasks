@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #coding: utf-8
 
-ARRAY = [10, 6, 5, 30, 20, 1]
+ARRAY = [10, 6, 5, 0, 10, 1]
 
 def find_max(arr):
     """

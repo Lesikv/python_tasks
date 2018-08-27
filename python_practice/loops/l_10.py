@@ -1,14 +1,16 @@
 #!/usr/bin/env python
 #coding: utf-8
 
-try:
-    N = int(input('Введите число '))
-except NameError:
-    print 'Вы ввели не число'
-    N = 0
+n = input('Введите число ')
 
-def return_square(n):
-    return n**2
+while True:
+    if isinstance(n, int):
+        print n ** 2
+        break
+    elif n == 'exit':
+        break
+    else:
+        print 'Вы ввели не число'
+        break
 
-print return_square(N)
 

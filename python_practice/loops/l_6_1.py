@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #coding: utf-8
 
-ARRAY = [10, 6, 17, 5, 30, 20, 1, 100, 0]
+ARRAY = [10, 6, 17, 5, 30, 20, 1, 100, 200]
 
 def find_max(arr, n):
     """
@@ -10,11 +10,11 @@ def find_max(arr, n):
     """
     sum = 0
     res = []
-    for k in range(n):
-        for i in range(1, len(arr)):
-            sum += arr[i-1]
-            if arr[i] > sum:
-                res.append(arr[i])
+    #for k in range(n):
+    for i in range(1, len(arr)):
+        sum += arr[i-1]
+        if arr[i] > sum and len(res) < n:
+            res.append(arr[i])
     return res
 
 

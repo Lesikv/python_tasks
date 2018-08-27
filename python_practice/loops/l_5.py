@@ -5,9 +5,10 @@ def print_pyramyd(N):
     k = 0
     while k < N:
         k += 1
-        for i in range(k):
-            print k,
-        print '\n'
+        print ' '* (N - k) + (str(k) + ' ' )* k
+        #for i in range(k):
+        #    print k, 
+        #print '\n'
 
 
 if __name__ == '__main__':
