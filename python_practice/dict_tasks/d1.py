@@ -12,8 +12,17 @@ def create_dict(k, v):
     """
     res = {}
     
-    res = dict(zip(k,v))
-    res.values().extend([None]*(len(k) - len(v)))
+    for i in range(len(k)):
+        key = k[i]
+        if key not in res:
+            res[key] = ''
+        if i < len(v):
+            res[key] = v[i]
+        else:
+            res[key] = None
+
+    #res = dict(zip(k,v))
+    #res.values().extend([None]*(len(k) - len(v)))
 
     return res
 
