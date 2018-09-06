@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #coding: utf-8
 
+from collections import defaultdict
 
 SOURCE = {'Война и мир': 'Толстой', 'Анна Каренина': 'Толстой', 'Герой нашего времени': 'Лермонтов'}
 
@@ -12,12 +13,11 @@ def books(src):
     """
 
     authors = src.values()
-    res = {}
+    res = defaultdict(lambda: [])
     for aut in authors:
         key = aut
-        if key not in res:
-            res[key] = []
-
+        #if key not in res:
+        #    res[key] = []    
         for book in src.keys():
             if src[book] == key:
                 res[key].append(book)
